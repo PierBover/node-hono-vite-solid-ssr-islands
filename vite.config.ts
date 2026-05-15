@@ -19,7 +19,7 @@ export default defineConfig(({isSsrBuild}) => {
 			cssCodeSplit: false,
 			rolldownOptions: {
 				input: isSsrBuild
-					? 'src/index.ts'
+					? 'src/server.ts'
 					: ['src/islands-entry.tsx', 'src/client-entry.ts', 'src/css/styles-entry.ts'],
 				output: {
 					minify: isSsrBuild

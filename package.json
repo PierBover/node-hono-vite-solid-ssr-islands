@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "rm -rf dist && vite build && vite build --ssr",
+    "start": "NODE_ENV=production node dist/server/server.js"
   },
   "repository": {
     "type": "git",
