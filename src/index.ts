@@ -1,10 +1,9 @@
+import {serveStatic} from '@hono/node-server/serve-static'
 import {Hono} from 'hono';
-import {serveStatic} from 'hono/bun';
 import {compress} from 'hono/compress';
 import {renderSolidPage} from './middleware.tsx';
 import about from './pages/about.tsx';
 import home from './pages/home.tsx';
-import {HomeContext, type HomeContextValue} from './pages/pages-contexts.ts';
 
 const isDev = import.meta.env.DEV;
 const isProd = import.meta.env.PROD;

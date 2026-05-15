@@ -1,4 +1,4 @@
-import {file} from 'bun';
+import {readFile} from 'node:fs/promises';
 import {createMiddleware} from 'hono/factory';
 import {html, raw} from 'hono/html';
 import {createComponent, generateHydrationScript, renderToString} from 'solid-js/web';
@@ -8,7 +8,7 @@ import {HonoContext, type HonoContextValue} from './pages/pages-contexts';
 const isDev = import.meta.env.DEV;
 const isProd = import.meta.env.PROD;
 
-const viteManifest = isProd ? await file('dist/client/.vite/manifest.json').text() : null;
+const viteManifest = isProd ? await readFile('dist/client/.vite/manifest.json', 'utf-8') : null;
 const viteManifestJson = viteManifest ? (JSON.parse(viteManifest) as Manifest) : null;
 
 const hydrationScript = generateHydrationScript();

@@ -1,5 +1,4 @@
 import devServer from '@hono/vite-dev-server';
-import bunAdapter from '@hono/vite-dev-server/bun';
 import {defineConfig} from 'vite';
 import solid from 'vite-plugin-solid';
 
@@ -8,8 +7,7 @@ export default defineConfig(({isSsrBuild}) => {
 		plugins: [
 			solid({ssr: true}),
 			devServer({
-				entry: 'src/index.ts',
-				adapter: bunAdapter
+				entry: 'src/index.ts'
 			})
 		],
 		server: {
@@ -23,7 +21,6 @@ export default defineConfig(({isSsrBuild}) => {
 				input: isSsrBuild
 					? 'src/index.ts'
 					: ['src/islands-entry.tsx', 'src/client-entry.ts', 'src/css/styles-entry.ts'],
-				external: ['bun'],
 				output: {
 					minify: isSsrBuild
 						? false

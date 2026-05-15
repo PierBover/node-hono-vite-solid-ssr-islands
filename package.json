@@ -1,0 +1,33 @@
+{
+  "name": "hono-vite-solid-ssr-islands",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PierBover/node-hono-vite-solid-ssr-islands.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/PierBover/node-hono-vite-solid-ssr-islands/issues"
+  },
+  "homepage": "https://github.com/PierBover/node-hono-vite-solid-ssr-islands#readme",
+  "dependencies": {
+    "@hono/node-server": "2.0.2",
+    "devalue": "5.8.1",
+    "hono": "4.12.18",
+    "solid-js": "1.9.12"
+  },
+  "devDependencies": {
+    "@hono/vite-dev-server": "0.25.3",
+    "@types/node": "25.6.2",
+    "vite": "8.0.11",
+    "vite-plugin-solid": "2.11.12"
+  }
+}
